@@ -1,0 +1,87 @@
+{% if erreur is defined %}
+    <span class="badge badge-danger mt-2 d-flex justify-content-center">{{erreur}}</span>
+{% endif %}
+
+{% if erreurajout is defined %}
+    <span class="badge badge-danger mt-2 d-flex justify-content-center">{{erreur}}</span>
+{% endif %}
+
+{% if ajout is defined %}
+    <span class="badge badge-success mt-2 d-flex justify-content-center">{{ajout}}</span>
+{% endif %}
+
+<div class="head text-center col-lg-5 mx-auto">
+    <h4><b>Ajouter un film à la filmthèque du site</b></h4>
+</div>
+
+<form class="col-lg-6 mx-auto creafilm mt-2" method="post" action="creer_film">
+
+    <div class="text-center">
+        <h4><u>Informations générales du film:</u></h4>
+    </div>
+
+    <div class="form-group form-control-sm">
+        <label for="titre_film">Titre</label>
+        <input type="text" class="form-control" id="titre_film" placeholder="Entrez le titre de votre film" name="titreFilm">
+    </div>
+    <br>
+    <div class="form-group form-control-sm">
+        <label for="realisateur_film">Réalisateur</label>
+        <input type="text" class="form-control" id="realisateur_film" placeholder="Entrez le réalisateur de votre film" name="realFilm">
+    </div>
+    <br>
+    <div class="form-group form-control-sm">
+        <label for="affiche_film">Affiche du film</label>
+        <input type="text" class="form-control" id="affiche_film" placeholder="Entrez l'url de l'affiche du film" name="afficheFilm">
+    </div>
+    <br>
+    <div class="form-group form-control-sm">
+        <label for="annee_film">Année</label>
+        <input type="text" class="form-control" id="annee_film" placeholder="Entrez l'année de votre film" name="anneeFilm">
+    </div>
+    <br>
+    <div class="text-center form-control-sm">
+        <h4><u>Listes des acteurs principaux et leurs rôles:</u></h4>
+    </div>
+    
+    <div class="form-row form-control-sm">
+        <div class="col">Rôle
+            <input type="text" class="form-control" placeholder="Rôle" name="roleFilm1">
+        </div>
+        <div class="col">Nom acteur
+            <input type="text" class="form-control" placeholder="Nom acteur" name="nomActeur1">
+        </div>
+        <div class="col">Prénom acteur
+            <input type="text" class="form-control" placeholder="Prénom acteur" name="prenomActeur1">
+        </div>
+    </div>
+    <br><br>
+    <div class="form-row form-control-sm">
+        <div class="col">Rôle
+            <input type="text" class="form-control" placeholder="Rôle" name="roleFilm2">
+        </div>
+        <div class="col">Nom acteur
+            <input type="text" class="form-control" placeholder="Nom acteur" name="nomActeur2">
+        </div>
+        <div class="col">Prénom acteur
+            <input type="text" class="form-control" placeholder="Prénom acteur" name="prenomActeur2">
+        </div>
+    </div>
+    <br><br>
+    <div class="form-row form-control-sm">
+        <div class="col">Rôle
+            <input type="text" class="form-control" placeholder="Rôle" name="roleFilm3">
+        </div>
+        <div class="col">Nom acteur
+            <input type="text" class="form-control" placeholder="Nom acteur" name="nomActeur3">
+        </div>
+        <div class="col">Prénom acteur
+            <input type="text" class="form-control" placeholder="Prénom acteur" name="prenomActeur3">
+        </div>
+    </div>
+    <br><br>
+
+    <div class="text-right">
+        <button type="submit" class="mb-2 btn"> Ajouter film</button>
+    </div>
+</form>

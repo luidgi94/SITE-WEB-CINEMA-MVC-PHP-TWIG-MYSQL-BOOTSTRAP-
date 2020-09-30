@@ -1,0 +1,66 @@
+            {% if deconnexion is defined %}
+                <span class="badge badge-success mt-2 d-flex justify-content-center">{{deconnexion}}</span>
+            {% endif %}
+            
+            <div class="mt-5 mb-5  col-lg-7 container justify-content-center session">
+                    {% if erreur is defined %}
+                        <span class="badge badge-danger mt-2 d-flex justify-content-center">{{erreur}}</span>
+                    {% endif %}
+                <form class="mt-3 form col-lg-5 mx-auto" method="post" action="se_connecter">
+
+                    <div class="text-muted text-center mb-3 mt-3">
+                        <small>Se connecter avec mon compte:</small>
+                    </div>
+
+                    <div class="text-center">
+
+                        <div class="logo mt-3">
+                            <a href="#"><i class="fab fa-github">
+                            Github </i></a>
+                        </div>
+
+                        <div class="logo mt-3 mb-2">
+                            <a href="#"><i class="fab fa-google">
+                            Google </i></a>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="mail">Adresse E-mail</label>
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="far fa-envelope"></i>
+                                </div><input type="email" class="form-control" name="mail" id="mail" aria-describedby="emailHelp" placeholder="Entrez votre e-mail">
+                            </div>
+                        <small id="emailHelp" class="form-text text-muted">Nous ne communiquerons vos données à aucuns tiers.</small>
+                        
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="password">Mot de Passe</label>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fas fa-key"></i></div><input type="password" class="form-control" id="password" name="password" placeholder="Mot de Passe">
+                        </div>
+                        
+                    
+                    </div>
+
+                    <div class="form-group form-check">
+
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1"> Se rappeler de moi</label>
+                        <p class="text-right inscript">Pas encore inscrit? <a href="register">S'inscrire</a></p>
+                        
+                    </div>
+                    
+                    
+                    <div class="text-center">
+                        <button type="submit" class="my-4 btn"> Se connecter</button>
+                    </div>
+
+                </form>
+                
+            </div>

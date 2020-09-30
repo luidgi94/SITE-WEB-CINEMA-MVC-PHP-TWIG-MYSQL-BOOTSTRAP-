@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+        <head>
+                <title>MVC CINEMA with Twig</title>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"><link rel="stylesheet" href="view/web/css/base.css" media="screen" />
+                <link rel="shortcut icon" href="view/web/img/favicon.ico" />
+                <script src="https://kit.fontawesome.com/5cf80f76be.js" crossorigin="anonymous"></script>
+                
+        </head>
+        <body>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <a class="navbar-brand" href="films">FILMSELECT ONLINE</a>
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                        <li class="nav-item active">
+                                                <a class="nav-link" href="#">Films</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="interface_creer_film">Création</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="interface_user">Compte</a>
+                                        </li>
+                                </ul>
+                        </div>
+                        {% if session.user is not defined %}
+                                <a class="btn connexion" href="interface_connexion" role="button"><i class="fas fa-user">CONNEXION</i></a> 
+                        {% else %}
+                               <a class="username mr-5" href="interface_user">{{session.user}}</a> 
+                               <a class="btn connexion" href="se_deconnecter" role="button"><i class="fas fa-sign-out-alt">DECONNEXION</i></a>
+                        {% endif %}
+                </nav>

@@ -1,0 +1,43 @@
+            <nav class="navbar navbar-dark bg-dark mt-3 col-lg-8 mx-auto">
+                <p class="ml-5 text-light h2">RECHERCHER UN FILM</p>
+                <form class="form-inline" action="films" method="post">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Saisir un mot" aria-label="Search" name="recherche">
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">RECHERCHER</button>
+                </form>
+            </nav>
+
+            <div id="carouselExampleIndicators" class="carousel slide col-lg-5 mx-auto" data-ride="carousel">
+        
+                {# <ol class="carousel-indicators">
+                {% for films in allfilms %}
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{loop.index}}" {% if loop.index == 1 %} class="active" {% endif %}></li>
+                {% endfor %}
+                </ol> #}
+
+                <div class="carousel-inner mt-4 mb-5">
+                    {% for films in allfilms %}
+                        <div class="carousel-item {% if loop.index == 1 %} active {% endif %}"> 
+                            <img src="{{films.get_affiche}}" class="w-100 h-100" alt="affiche cinéma">
+                            <div class="carousel-caption">
+                                <p><b>{{films.get_titre}}</b> (<b>{{films.get_annee}}</b>) de <b>{{films.get_realisateur}}</b></p>
+                                <p><u>Acteurs:</u><br>
+                                {% for role in films.get_personnages %}
+                                    <b>{{role.get_acteur.get_prenom}} {{role.get_acteur.get_nom}}</b> dans le rôle de : <b>{{role.get_role}}</b><br>
+                                {% endfor %}
+                            </div> 
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                
+            </div>
+            
